@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FileReaderFromFile {
+public class FileReaderService {
 
     public List<String> getStringFromFile(String path) throws IOException {
         List<String>records = new ArrayList<>();
