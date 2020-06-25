@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import web.spring_boot.springbootproject.entity.User;
 
-public interface UserServices {
+public interface UserService {
 
     public User add(User user);
 

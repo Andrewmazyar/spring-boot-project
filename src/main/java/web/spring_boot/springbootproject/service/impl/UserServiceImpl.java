@@ -5,13 +5,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import web.spring_boot.springbootproject.entity.User;
 import web.spring_boot.springbootproject.repository.UserRepository;
-import web.spring_boot.springbootproject.service.UserServices;
 
 @Service
-public class UserService implements UserServices {
+public class UserServiceImpl implements web.spring_boot.springbootproject.service.UserService {
     private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

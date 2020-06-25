@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import web.spring_boot.springbootproject.dto.FileDto;
+import web.spring_boot.springbootproject.service.ParseService;
 
 @Service
-public class ParseService {
-    private final FileReaderService fileReaderService;
+public class ParseServiceImpl implements ParseService {
+    private final FileReaderServiceImpl fileReaderService;
 
-    public ParseService(FileReaderService fileReaderService) {
+    public ParseServiceImpl(FileReaderServiceImpl fileReaderService) {
         this.fileReaderService = fileReaderService;
     }
 

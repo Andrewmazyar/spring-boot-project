@@ -5,11 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import web.spring_boot.springbootproject.service.FileReaderService;
 
 @Service
-public class FileReaderService {
+public class FileReaderServiceImpl implements FileReaderService {
 
     public List<String> getStringFromFile(String path) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
