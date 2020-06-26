@@ -9,6 +9,17 @@ import web.spring_boot.springbootproject.service.ParseService;
 
 @Service
 public class ParseServiceImpl implements ParseService {
+    private final int ID_ATTRIBUTE = 0;
+    private final int PRODUCT_ID = 1;
+    private final int USER_ID = 2;
+    private final int PROFILE_NAME = 3;
+    private final int HELP_FULLNESS_NUMERATOR = 4;
+    private final int HELP_FULLNESS_DENOMINATOR = 5;
+    private final int SCORE = 6;
+    private final int TIME = 7;
+    private final int SUMMARY = 8;
+    private final int TEXT = 9;
+
     private final FileReaderServiceImpl fileReaderService;
 
     public ParseServiceImpl(FileReaderServiceImpl fileReaderService) {
@@ -18,17 +29,18 @@ public class ParseServiceImpl implements ParseService {
     public List<FileDto> parse(String path) throws IOException {
         List<FileDto> fileDtos = new ArrayList<>();
         for (String data : fileReaderService.getStringFromFile(path)) {
+            String[] arrayData = data.split(",");
             FileDto fileDto = new FileDto();
-            fileDto.setId(Long.valueOf(data.split(",")[0]));
-            fileDto.setProductId(Long.valueOf(data.split(",")[1]));
-            fileDto.setUserId(Long.valueOf(data.split(",")[2]));
-            fileDto.setProfileName(data.split(",")[3]);
-            fileDto.setHelpfulnessNumerator(Long.valueOf(data.split(",")[4]));
-            fileDto.setHelpfulnessDenominator(Long.valueOf(data.split(",")[5]));
-            fileDto.setScore(Long.valueOf(data.split(",")[6]));
-            fileDto.setTime(Long.valueOf(data.split(",")[7]));
-            fileDto.setSummary(data.split(",")[8]);
-            fileDto.setText(data.split(",")[9]);
+            fileDto.setId(Long.valueOf(arrayData[ID_ATTRIBUTE]));
+            fileDto.setProductId(Long.valueOf(arrayData[PRODUCT_ID]));
+            fileDto.setUserId(Long.valueOf(arrayData[USER_ID]));
+            fileDto.setProfileName(arrayData[PROFILE_NAME]);
+            fileDto.setHelpfulnessNumerator(Long.valueOf(arrayData[HELP_FULLNESS_NUMERATOR]));
+            fileDto.setHelpfulnessDenominator(Long.valueOf(arrayData[HELP_FULLNESS_DENOMINATOR]));
+            fileDto.setScore(Long.valueOf(arrayData[SCORE]));
+            fileDto.setTime(Long.valueOf(arrayData[TIME]));
+            fileDto.setSummary(arrayData[SUMMARY]);
+            fileDto.setText(arrayData[TEXT]);
             fileDtos.add(fileDto);
         }
         return fileDtos;
