@@ -1,25 +1,26 @@
-package web.spring_boot.springbootproject.lib;
+package web.spring_boot.springbootproject.service.impl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import web.spring_boot.springbootproject.service.FileReaderService;
 
-@Component
-public class FileReaderService {
+@Service
+public class FileReaderServiceImpl implements FileReaderService {
 
     public List<String> getStringFromFile(String path) throws IOException {
-        List<String>records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            List<String> lines = new ArrayList<>();
             String line;
             while ((line = br.readLine()) != null) {
-                records.add(line);
+                lines.add(line);
             }
+            return lines;
         } catch (IOException e) {
             throw new IOException("No such File", e);
         }
-        return records;
     }
 }
