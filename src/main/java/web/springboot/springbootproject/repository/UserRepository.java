@@ -1,7 +1,7 @@
 package web.springboot.springbootproject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.springboot.springbootproject.entity.UserReview;
+import web.springboot.springbootproject.entity.User;
 
-public interface UserRepository extends JpaRepository<UserReview, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 }
