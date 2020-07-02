@@ -8,7 +8,7 @@
         <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>web.spring_boot</groupId>
+    <groupId>web.springboot</groupId>
     <artifactId>spring-boot-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-project</name>
