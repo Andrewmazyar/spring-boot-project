@@ -1,4 +1,4 @@
-package web.spring_boot.springbootproject.config;
+package web.springboot.springbootproject.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package web.spring_boot.springbootproject.service.impl;
+package web.springboot.springbootproject.service.impl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import web.spring_boot.springbootproject.service.FileReaderService;
+import web.springboot.springbootproject.service.FileReaderService;
 
 @Service
 public class FileReaderServiceImpl implements FileReaderService {

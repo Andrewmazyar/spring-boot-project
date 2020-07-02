@@ -1,11 +1,11 @@
-package web.spring_boot.springbootproject.service.impl;
+package web.springboot.springbootproject.service.impl;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import web.spring_boot.springbootproject.dto.FileDto;
-import web.spring_boot.springbootproject.service.ParseService;
+import web.springboot.springbootproject.dto.FileDto;
+import web.springboot.springbootproject.service.ParseService;
 
 @Service
 public class ParseServiceImpl implements ParseService {

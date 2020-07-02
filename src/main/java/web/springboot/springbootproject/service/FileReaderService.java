@@ -1,4 +1,4 @@
-package web.spring_boot.springbootproject.service;
+package web.springboot.springbootproject.service;
 
 import java.io.IOException;
 import java.util.List;

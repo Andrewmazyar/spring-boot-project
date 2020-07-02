@@ -1,4 +1,4 @@
-package web.spring_boot.springbootproject.dto;
+package web.springboot.springbootproject.dto;
 
 import lombok.Data;
 
