@@ -16,11 +16,11 @@ public class CustomerUserDetailService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userService.findByEmail(email);
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        User user = userService.findByUserName(userName);
         UserBuilder userBuilder;
         if (user != null) {
-            userBuilder = withUsername(email);
+            userBuilder = withUsername(userName);
             userBuilder.password(user.getPassword());
             userBuilder.roles(user.getRoles()
                     .stream()
