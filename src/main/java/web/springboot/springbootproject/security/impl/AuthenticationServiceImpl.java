@@ -31,4 +31,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return user;
 
     }
+
+    @Override
+    public User login(String login, String password) {
+        User user = userService.findByUserName(login);
+        String encodedPassword = passwordEncoder.encode(password);
+        if (user == null || user.getPassword().equals(encodedPassword)) {
+            throw new RuntimeException("Incorrect username or password!!!");
+        }
+        return user;
+    }
 }
