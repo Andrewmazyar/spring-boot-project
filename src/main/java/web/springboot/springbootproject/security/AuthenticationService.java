@@ -4,4 +4,6 @@ import web.springboot.springbootproject.entity.User;
 
 public interface AuthenticationService {
     public User register(String username, String password);
+
+    User login(String login, String password);
 }
